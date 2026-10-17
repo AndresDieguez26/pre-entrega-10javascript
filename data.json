@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Martina Gómez",
+        "posicion": "Delantera",
+        "edad": 24
+    },
+    {
+        "id": 2,
+        "nombre": "Sofía Pérez",
+        "posicion": "Arquera",
+        "edad": 27
+    },
+    {
+        "id": 3,
+        "nombre": "Lucía Fernández",
+        "posicion": "Defensora",
+        "edad": 22
+    },
+    {
+        "id": 4,
+        "nombre": "Camila Rodríguez",
+        "posicion": "Mediocampista",
+        "edad": 25
+    }
+]

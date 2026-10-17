@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantel Fútbol 6</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>⚽ Plantel Fútbol 6</h1>
+        <p>Administrá tu plantel. Los cambios se guardan automáticamente en este navegador.</p>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel" aria-label="Estado de carga">
+            <h2>Carga del plantel</h2>
+            <p id="estado-carga" role="status" aria-live="polite">Preparando la carga…</p>
+            <button type="button" id="reintentar-carga" class="btn btn-evaluar" hidden>Reintentar carga</button>
+        </section>
+        <fieldset id="zona-plantel" disabled aria-busy="true">
+        <legend class="solo-lectores">Administración del plantel</legend>
+        <aside id="recordatorio" class="panel recordatorio" role="status" aria-live="polite" hidden></aside>
+        <section class="panel">
+            <h2 id="titulo-formulario">Agregar jugadora</h2>
+
+            <form id="form-jugadora">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Ej: Martina Gómez" required maxlength="80">
+                </div>
+
+                <div class="campo">
+                    <label for="posicion">Posición</label>
+                    <input type="text" id="posicion" placeholder="Ej: Delantera" required maxlength="60">
+                </div>
+
+                <div class="campo">
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad" placeholder="Ej: 24" min="15" max="60" step="1" required>
+                </div>
+
+                <button type="submit" class="btn btn-agregar" id="guardar-jugadora">+ Agregar jugadora</button>
+            <button type="button" id="cancelar-edicion" class="btn" hidden>Cancelar edición</button>
+            </form>
+
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel" id="panel-evaluacion" aria-busy="false">
+            <h2>Evaluar el plantel</h2>
+            <p>Consultá si tenés al menos seis jugadoras y una arquera registrada para preparar el partido.</p>
+            <button type="button" id="evaluar-plantel" class="btn btn-evaluar">Evaluar plantel</button>
+            <p id="estado-evaluacion" role="status" aria-live="polite"></p>
+            <p id="resultado-evaluacion" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <h2>Buscar jugadora</h2>
+            <label for="buscador">Nombre o posición</label>
+            <input type="search" id="buscador" placeholder="Escribí un nombre o una posición...">
+        </section>
+
+        <section class="panel">
+            <div class="titulo-listado">
+                <h2>Jugadoras</h2>
+                <span id="cantidad-jugadoras"></span>
+            </div>
+
+            <button type="button" id="vaciar-plantel" class="btn btn-eliminar">Vaciar plantel</button>
+            <div id="contenedor-jugadoras" class="grilla-jugadoras"></div>
+        </section>
+        </fieldset>
+    </main>
+
+    <footer>
+        <p>Pre-Entrega 10 · APIs, Peticiones y Librerías</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
